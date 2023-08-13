@@ -1,9 +1,24 @@
 import { ponder } from "@/generated";
 
-ponder.on("IdRegistry:CancelRecovery", async ({ event, context }) => {
-  console.log(event.params);
+ponder.on("IdRegistry:Register", async ({ event, context }) => {
+  const { User } = context.entities;
+ 
+  const user = await User.create({
+    id: event.params.id,
+    data: {
+      address: event.params.to,
+    },
+  });
 });
 
-ponder.on("IdRegistry:ChangeHome", async ({ event, context }) => {
-  console.log(event.params);
+
+ponder.on("IdRegistry:Transfer", async ({ event, context }) => {
+  const { User } = context.entities;
+ 
+  const user = await User.update({
+    id: event.params.id,
+    data: {
+      address: event.params.to,
+    },
+  });
 });

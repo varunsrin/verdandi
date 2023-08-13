@@ -1,4 +1,4 @@
-type ExampleEntity @entity {
-  id: String!
-  name: String!
+type User @entity {
+  id: BigInt!
+  address: String!
 }
