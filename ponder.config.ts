@@ -12,5 +12,12 @@ export const config: Config = {
       address: "0xda107a1caf36d198b12c16c7b6a1d1c795978c42",
       startBlock: 7648795,
     },
+    {
+      name: "ERC1967Proxy",
+      network: "goerli",
+      abi: ["./abis/ERC1967Proxy.json", "./abis/NameRegistry_0xf73b.json"],
+      address: "0xe3be01d99baa8db9905b33a3ca391238234b79d1",
+      startBlock: 7648795,
+    },
   ],
 };
