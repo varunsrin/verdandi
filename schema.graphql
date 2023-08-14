@@ -1,9 +1,10 @@
-type User @entity {
+type Fid @entity {
   id: BigInt!
   address: String!
 }
 
-type Username @entity {
+type Fname @entity {
   id: BigInt!
   address: String!
+  fname: String!
 }
