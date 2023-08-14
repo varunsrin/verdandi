@@ -1,7 +1,7 @@
 type Fid @entity {
   id: BigInt!
   address: String!
-  fnames: [Fname] @derivedFrom(field: "fid")
+  fnames: [Fname!]! @derivedFrom(field: "fid")
 }
 
 type Fname @entity {
