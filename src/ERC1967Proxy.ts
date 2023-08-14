@@ -4,7 +4,7 @@ import { bytesToString, toBytes } from "viem";
 ponder.on("ERC1967Proxy:Transfer", async ({ event, context }) => {
   const { Fname } = context.entities;
 
-  const fid = await context.contracts.IdRegistry.read.idOf([event.params.to])
+  const fid = await context.contracts.IdRegistry.read.idOf([event.params.to]);
  
   const fname = await Fname.upsert({
     id: event.params.tokenId,
