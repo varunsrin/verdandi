@@ -9,10 +9,9 @@ ponder.on("IdRegistry:Register", async ({ event, context }) => {
     update: { fid: event.params.id },
   });
 
-  await Fid.upsert({
+  await Fid.create({
     id: event.params.id,
-    create: { account: event.params.to },
-    update: { account: event.params.to },
+    data: { account: event.params.to },
   });
 });
 
@@ -25,9 +24,8 @@ ponder.on("IdRegistry:Transfer", async ({ event, context }) => {
     update: { fid: event.params.id },
   });
 
-  await Fid.upsert({
+  await Fid.update({
     id: event.params.id,
-    create: { account: event.params.to },
-    update: { account: event.params.to },
+    data: { account: event.params.to },
   });
 });
