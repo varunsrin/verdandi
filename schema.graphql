@@ -11,6 +11,6 @@ type Fname @entity {
 
 type Account @entity {
   id: String!
-  fid: [Fid!]! @derivedFrom(field: "account")
+  fid: Fid
   fnames: [Fname!]! @derivedFrom(field: "account")
 }
