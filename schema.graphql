@@ -1,10 +1,16 @@
 type Fid @entity {
   id: BigInt!
-  address: String!
+  account: Account!
 }
 
 type Fname @entity {
   id: BigInt!
-  address: String!
-  fname: String!
+  name: String!
+  account: Account!
+}
+
+type Account @entity {
+  id: String!
+  fid: Fid
+  fnames: [Fname!]! @derivedFrom(field: "account")
 }
